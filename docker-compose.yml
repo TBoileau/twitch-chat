@@ -1,0 +1,27 @@
+version: '3.9'
+
+volumes:
+  node_modules:
+      driver: local
+      driver_opts:
+        type: none
+        o: bind
+        device: ./node_modules
+
+networks:
+  dev:
+    driver: bridge
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    restart: on-failure
+    ports:
+      - "4201:4201"
+    volumes:
+      - ./:/var/www/html
+      - node_modules:/var/www/html/node_modules
+    networks:
+      - dev
