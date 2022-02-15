@@ -15,7 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     RouterModule.forRoot([
-      {path: 'chat', component: ChatComponent},
+      {path: '', component: ChatComponent},
     ]),
     HttpClientModule,
     BrowserModule,
