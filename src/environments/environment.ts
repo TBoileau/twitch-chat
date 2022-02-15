@@ -5,6 +5,15 @@
 export const environment = {
   production: false,
   channel: 'toham',
+  firebase: {
+    apiKey: "AIzaSyCW2RpxA2qMxGHFScRO6fSuof6w273kC0s",
+    authDomain: "twitch-bot-69575.firebaseapp.com",
+    databaseURL: "https://twitch-bot-69575-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "twitch-bot-69575",
+    storageBucket: "twitch-bot-69575.appspot.com",
+    messagingSenderId: "63693043187",
+    appId: "1:63693043187:web:302144eb39e36e247e0e86"
+  }
 };
 
 /*

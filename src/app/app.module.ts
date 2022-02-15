@@ -6,6 +6,9 @@ import {AppComponent} from './app.component';
 import {ChatComponent} from './chat/chat.component';
 import {RouterModule} from "@angular/router";
 import {MessageComponent} from './message/message.component';
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 
 @NgModule({
   declarations: [
@@ -17,6 +20,8 @@ import {MessageComponent} from './message/message.component';
     RouterModule.forRoot([
       {path: 'chat', component: ChatComponent},
     ]),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule
   ],
