@@ -3,7 +3,6 @@ import {Client} from 'tmi.js';
 import {environment} from "../../environments/environment";
 import {Observable, Observer} from "rxjs";
 import {Message} from "../models/Message";
-import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class ChatClient {
   public newMessage!: Observable<Message>;
   private client: Client;
 
-  constructor(http: HttpClient) {
+  constructor() {
     this.client = new Client(environment.twitch);
 
     this.client.connect();
@@ -33,9 +32,5 @@ export class ChatClient {
         });
       });
     });
-  }
-
-  send(message: Message): void {
-    this.client.say(environment.twitch.channels[0], message.content);
   }
 }

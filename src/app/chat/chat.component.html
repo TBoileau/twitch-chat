@@ -1,4 +1,9 @@
-<div *ngFor="let message of messages">
-  <app-message [message]="message"></app-message>
+<div class="chat">
+  <div class="chat-body">
+    <div *ngFor="let message of messages">
+      <app-message [message]="message"></app-message>
+    </div>
+  </div>
 </div>
+
 

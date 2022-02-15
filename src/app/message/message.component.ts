@@ -1,20 +1,26 @@
 import {Component, Input} from '@angular/core';
 import {Message} from "../models/Message";
 import {Badges} from '../data/badges';
+import {Badge} from "../models/Badge";
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
-  styleUrls: ['./message.component.scss']
+  styleUrls: ['./message.component.scss'],
+  animations: []
 })
 export class MessageComponent {
   @Input() message!: Message;
 
   get badges() {
-    let badges = '';
+    const badges: Array<Badge> = [];
     if (this.message.badges?.subscriber) {
-      // @ts-ignore
-      badges += `<img alt="${Badges[this.message.badges?.subscriber].title}" src="${Badges[this.message.badges?.subscriber].image_url_4x}">`;
+      badges.push(<Badge>{
+        // @ts-ignore
+        title: Badges[this.message.badges?.subscriber].title,
+        // @ts-ignore
+        url: Badges[this.message.badges?.subscriber].image_url_4x
+      })
     }
     return badges;
   }

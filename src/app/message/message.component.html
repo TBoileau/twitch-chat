@@ -1,5 +1,9 @@
-<div>
-  <p [innerHTML]=badges></p>
-  <strong [ngStyle]="{color: message.color}">{{message.username}}</strong>
-  <p [innerHTML]=html></p>
-</div>
+<article class="message">
+  <div class="message-user">
+    <div *ngIf="badges.length > 0" class="messages-badges">
+      <img *ngFor="let badge of badges" alt="{{ badge.title }}" class="badge" src="{{ badge.url }}">
+    </div>
+    <span [ngStyle]="{color: message.color}">{{message.username}} :</span>
+  </div>
+  <p [innerHTML]=html class="message-content"></p>
+</article>
