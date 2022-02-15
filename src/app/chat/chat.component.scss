@@ -1,0 +1,17 @@
+.chat {
+  height: 700px;
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+
+  > .chat-body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}
